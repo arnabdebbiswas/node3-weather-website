@@ -12,10 +12,12 @@ const forecast = (latitude, longitude, callback) => {
         weather_descriptions,
         temperature,
         feelslike,
+        wind_speed,
+        uv_index,
       } = response.body.current;
       callback(
         undefined,
-        `${weather_descriptions[0]}. It is currently ${temperature} degrees out. It feels like ${feelslike} degrees out.`
+        `${weather_descriptions[0]}. It is currently ${temperature} degrees out. It feels like ${feelslike} degrees out. The wind speed is currently at ${wind_speed}km/hr and UV index ${uv_index}.`
       );
     }
   });
